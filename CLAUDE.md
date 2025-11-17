@@ -36,7 +36,7 @@ npm start
 
 ### Project Structure
 ```
-stellar/
+scc_adjusters/
 ├── app/                     # Next.js 14 App Router
 │   ├── (auth)/             # Authentication routes
 │   ├── (dashboard)/        # Protected dashboard routes
@@ -90,9 +90,9 @@ Key environment variables in `.env.local`:
 
 ### Design System
 
-- **Colors**: 
-  - Primary: Stellar Orange (#E74C3C)
-  - Secondary: Stellar Dark (#2C3E50)
+- **Colors**:
+  - Primary: SCC Blue (#1e3a8a)
+  - Secondary: SCC Dark (#2C3E50)
 - **Components**: Using shadcn/ui with Radix UI primitives
 - **Animations**: Framer Motion for smooth transitions
 

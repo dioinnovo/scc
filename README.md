@@ -36,10 +36,10 @@ git --version     # Should show git version 2.x.x
 
 ```bash
 # Clone from Azure DevOps repository
-git clone https://dev.azure.com/Innovoco/Innovoco%20-%20Infrastructure%20and%20Internal%20Development/_git/AI-Stellar-HomeInspection
+git clone https://dev.azure.com/Innovoco/Innovoco%20-%20Infrastructure%20and%20Internal%20Development/_git/scc_adjusters
 
 # Navigate to project
-cd AI-Stellar-HomeInspection
+cd scc_adjusters
 
 # Install dependencies
 npm install
@@ -104,8 +104,8 @@ CMD ["npm", "start"]
 EOF
 
 # Build and run with Docker
-docker build -t stellar-app .
-docker run -d -p 3002:3002 --name stellar-app stellar-app
+docker build -t scc-app .
+docker run -d -p 3002:3002 --name scc-app scc-app
 ```
 
 ### PM2 Process Manager (Alternative)
@@ -118,7 +118,7 @@ npm install -g pm2
 npm run build
 
 # Start with PM2
-pm2 start npm --name "stellar-app" -- start
+pm2 start npm --name "scc-app" -- start
 
 # Setup auto-restart on boot
 pm2 startup
@@ -132,7 +132,7 @@ pm2 save
 sudo apt install nginx -y
 
 # Create Nginx configuration
-sudo tee /etc/nginx/sites-available/stellar << 'EOF'
+sudo tee /etc/nginx/sites-available/scc << 'EOF'
 server {
     listen 80;
     server_name your-domain.com;  # Replace with your domain
@@ -152,7 +152,7 @@ server {
 EOF
 
 # Enable the site
-sudo ln -s /etc/nginx/sites-available/stellar /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/scc /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 ```
@@ -160,7 +160,7 @@ sudo systemctl restart nginx
 ## 📁 Project Structure
 
 ```
-AI-Stellar-HomeInspection/
+scc_adjusters/
 ├── app/                          # Next.js App Router
 │   ├── dashboard/                # Main application dashboards
 │   │   ├── inspection/           # Inspection management
@@ -189,7 +189,7 @@ AZURE_OPENAI_KEY=configured
 
 # Email Service (Ready to use)
 RESEND_API_KEY=configured
-RESEND_FROM_EMAIL=claims@stellaradjusting.com
+RESEND_FROM_EMAIL=claims@strategicclaimconsultants.com
 
 # Database (SQLite - ready for development)
 DATABASE_URL="file:./dev.db"
