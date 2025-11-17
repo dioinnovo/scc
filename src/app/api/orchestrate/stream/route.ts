@@ -12,9 +12,6 @@ import { HumanMessage, AIMessage, BaseMessage } from '@langchain/core/messages';
 import { masterOrchestrator } from '@/lib/orchestrator/master';
 import { buildMasterOrchestrator } from '@/lib/orchestrator/master';
 
-// Export runtime for edge support
-export const runtime = 'edge';
-
 /**
  * Stream conversation responses using Vercel AI SDK
  */

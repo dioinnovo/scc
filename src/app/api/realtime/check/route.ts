@@ -1,10 +1,12 @@
 /**
  * Realtime API Configuration Check
- * 
+ *
  * Diagnostic endpoint to verify Realtime API configuration
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+
+export const dynamic = 'force-dynamic'
 
 /**
  * GET /api/realtime/check
