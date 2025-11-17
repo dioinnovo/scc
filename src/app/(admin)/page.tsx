@@ -152,6 +152,7 @@ export default function AdminDashboard() {
               </Link>
               <button
                 onClick={fetchClaims}
+                aria-label="Refresh claims data"
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-scc-red transition"
               >
                 <RefreshCw size={20} />
@@ -216,6 +217,7 @@ export default function AdminDashboard() {
                 <input
                   type="text"
                   placeholder="Search claims..."
+                  aria-label="Search claims"
                   value={filters.search}
                   onChange={(e) => setFilters({ ...filters, search: e.target.value })}
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
@@ -263,7 +265,10 @@ export default function AdminDashboard() {
               <option value="LOW">Low</option>
             </select>
 
-            <button className="px-4 py-2 bg-scc-red text-white rounded-lg hover:bg-red-600 transition">
+            <button
+              aria-label="Download claims report"
+              className="px-4 py-2 bg-scc-red text-white rounded-lg hover:bg-red-600 transition"
+            >
               <Download size={20} />
             </button>
           </div>
@@ -278,6 +283,7 @@ export default function AdminDashboard() {
                   <th className="px-6 py-3 text-left">
                     <input
                       type="checkbox"
+                      aria-label="Select all claims"
                       onChange={(e) => {
                         if (e.target.checked) {
                           setSelectedClaims(claims.map(c => c.id))
@@ -340,6 +346,7 @@ export default function AdminDashboard() {
                         <input
                           type="checkbox"
                           checked={selectedClaims.includes(claim.id)}
+                          aria-label={`Select claim ${claim.claimNumber}`}
                           onChange={(e) => {
                             if (e.target.checked) {
                               setSelectedClaims([...selectedClaims, claim.id])
@@ -431,6 +438,7 @@ export default function AdminDashboard() {
               <button
                 onClick={() => setPage(Math.max(1, page - 1))}
                 disabled={page === 1}
+                aria-label="Previous page"
                 className="px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 dark:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <ChevronLeft size={18} />
@@ -438,6 +446,7 @@ export default function AdminDashboard() {
               <button
                 onClick={() => setPage(Math.min(totalPages, page + 1))}
                 disabled={page === totalPages}
+                aria-label="Next page"
                 className="px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 dark:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <ChevronRight size={18} />

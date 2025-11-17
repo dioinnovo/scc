@@ -201,13 +201,17 @@ export default function ClaimsAnalysisCenter() {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <button 
+              <button
                 onClick={fetchDashboardData}
+                aria-label="Refresh dashboard data"
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-scc-red transition"
               >
                 <RefreshCw size={20} />
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-scc-red text-white rounded-lg hover:bg-red-600 transition">
+              <button
+                aria-label="Export claims report"
+                className="flex items-center gap-2 px-4 py-2 bg-scc-red text-white rounded-lg hover:bg-red-600 transition"
+              >
                 <Download size={18} />
                 Export Report
               </button>
@@ -250,7 +254,10 @@ export default function ClaimsAnalysisCenter() {
                 <p className="text-sm text-gray-300 mb-2">{insight.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-400">{insight.impact}</span>
-                  <button className="text-xs bg-white dark:bg-gray-900/20 px-2 py-1 rounded hover:bg-white dark:bg-gray-900/30 transition">
+                  <button
+                    aria-label={`Action: ${insight.action}`}
+                    className="text-xs bg-white dark:bg-gray-900/20 px-2 py-1 rounded hover:bg-white dark:bg-gray-900/30 transition"
+                  >
                     {insight.action}
                   </button>
                 </div>
@@ -300,9 +307,11 @@ export default function ClaimsAnalysisCenter() {
                   <button
                     key={key}
                     onClick={() => setActiveTab(key as any)}
+                    aria-label={`View ${config.label}`}
+                    aria-current={isActive ? 'page' : undefined}
                     className={`flex items-center gap-2 px-6 py-4 font-medium transition whitespace-nowrap ${
-                      isActive 
-                        ? 'border-b-2 border-scc-red text-scc-red bg-red-50' 
+                      isActive
+                        ? 'border-b-2 border-scc-red text-scc-red bg-red-50'
                         : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                     }`}
                   >
@@ -328,6 +337,7 @@ export default function ClaimsAnalysisCenter() {
                   <input
                     type="text"
                     placeholder="Search by claim number, name, or address..."
+                    aria-label="Search claims"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
@@ -373,7 +383,10 @@ export default function ClaimsAnalysisCenter() {
                 <option value="LOW">Low</option>
               </select>
 
-              <button className="flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-scc-red transition">
+              <button
+                aria-label="Show more filter options"
+                className="flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-scc-red transition"
+              >
                 <Filter size={18} />
                 More Filters
               </button>
