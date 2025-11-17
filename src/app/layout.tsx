@@ -23,10 +23,7 @@ export const metadata: Metadata = {
   keywords: 'insurance, claims, AI, public adjusting, settlement, damage assessment',
   authors: [{ name: 'Strategic Claim Consultants' }],
   icons: {
-    icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
-    ],
+    icon: '/favicon-32x32.png',
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
   },

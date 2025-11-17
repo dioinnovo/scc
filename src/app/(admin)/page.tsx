@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
@@ -44,11 +44,7 @@ export default function AdminDashboard() {
   })
   const [selectedClaims, setSelectedClaims] = useState<string[]>([])
 
-  useEffect(() => {
-    fetchClaims()
-  }, [page, filters])
-
-  const fetchClaims = async () => {
+  const fetchClaims = useCallback(async () => {
     setLoading(true)
     try {
       const params = new URLSearchParams({
@@ -73,7 +69,11 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [page, filters])
+
+  useEffect(() => {
+    fetchClaims()
+  }, [fetchClaims])
 
   const getStatusIcon = (status: string) => {
     switch (status) {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { 
   TrendingUp, AlertCircle, Clock, DollarSign, CheckCircle, 
@@ -62,11 +62,7 @@ export default function ClaimsAnalysisCenter() {
     dateRange: '30'
   })
 
-  useEffect(() => {
-    fetchDashboardData()
-  }, [activeTab, filters])
-
-  const fetchDashboardData = async () => {
+  const fetchDashboardData = useCallback(async () => {
     setLoading(true)
     try {
       // Fetch executive insights
@@ -155,7 +151,11 @@ export default function ClaimsAnalysisCenter() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [activeTab, filters])
+
+  useEffect(() => {
+    fetchDashboardData()
+  }, [fetchDashboardData])
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
