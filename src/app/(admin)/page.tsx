@@ -226,6 +226,7 @@ export default function AdminDashboard() {
             <select
               value={filters.status}
               onChange={(e) => setFilters({ ...filters, status: e.target.value })}
+              aria-label="Filter by status"
               className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
             >
               <option value="">All Status</option>
@@ -241,6 +242,7 @@ export default function AdminDashboard() {
             <select
               value={filters.type}
               onChange={(e) => setFilters({ ...filters, type: e.target.value })}
+              aria-label="Filter by claim type"
               className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
             >
               <option value="">All Types</option>
@@ -251,6 +253,7 @@ export default function AdminDashboard() {
             <select
               value={filters.priority}
               onChange={(e) => setFilters({ ...filters, priority: e.target.value })}
+              aria-label="Filter by priority"
               className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
             >
               <option value="">All Priority</option>

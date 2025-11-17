@@ -338,6 +338,7 @@ export default function ClaimsAnalysisCenter() {
               <select
                 value={filters.insuranceCompany}
                 onChange={(e) => setFilters({ ...filters, insuranceCompany: e.target.value })}
+                aria-label="Filter by insurance company"
                 className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
               >
                 <option value="">All Insurers</option>
@@ -349,6 +350,7 @@ export default function ClaimsAnalysisCenter() {
               <select
                 value={filters.damageType}
                 onChange={(e) => setFilters({ ...filters, damageType: e.target.value })}
+                aria-label="Filter by damage type"
                 className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
               >
                 <option value="">All Damage Types</option>
@@ -361,6 +363,7 @@ export default function ClaimsAnalysisCenter() {
               <select
                 value={filters.priority}
                 onChange={(e) => setFilters({ ...filters, priority: e.target.value })}
+                aria-label="Filter by priority"
                 className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-scc-red"
               >
                 <option value="">All Priorities</option>
